@@ -5,7 +5,7 @@ print ("\t2-es")
 x=2
 print (x*1,x*2,x*3,x*4,x*5,x*6,x*7,x*8,x*9,x*10,)
 x=3
-print ("\t3-mas")
+print ("\t3-as")
 print (x*1,x*2,x*3,x*4,x*5,x*6,x*7,x*8,x*9,x*10,)
 x=4
 print ("\t4-es")
