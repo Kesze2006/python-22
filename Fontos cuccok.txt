@@ -1,0 +1,4 @@
+pip install matplotlib --proxy http://tanulo01:Tanulo0118@172.16.0.5:8080
+
+
+git config --global http.proxy http://tanulo01:Tanulo0118@172.16.0.5:8080
