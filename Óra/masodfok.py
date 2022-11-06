@@ -1,9 +1,23 @@
 import math
 #a*x2+b*x+c
-
-a = int(input("a="))
-b = int(input("b="))
-c = int(input("c="))
+a = ""
+while a == "":
+    try:
+        a = int(input("a="))
+    except:
+        print("Érvénytelen érték!")
+b = ""
+while b== "":
+    try:
+        b = int(input("b="))
+    except:
+        print("Érvénytelen érték!")
+c = ""
+while c == "":
+    try:
+        c = int(input("c="))
+    except:
+        print("Érvénytelen érték!")
 
 
 #(-b+-gyök(b2-4ac) )/ 2a
