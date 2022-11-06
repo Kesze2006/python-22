@@ -1,4 +1,5 @@
 import math
+#Működik?
 #a*x2+b*x+c
 a = ""
 while a == "":
