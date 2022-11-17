@@ -45,19 +45,33 @@ while c == "":
 
 
 #(-b+-gyök(b2-4ac) )/ 2a
+x1 = ""
+x2 = ""
 diszkriminans = b*b-4*a*c
 if diszkriminans < 0:
     print("Nincs megoldás")
 elif diszkriminans == 0: 
     megoldas = -b / (2*a)
+    x1 = megoldas
+    x2 = megoldas
     print("1 megoldás: {}".format(megoldas))
 else:
     x1 = (-b+math.sqrt(diszkriminans)) / (2*a)
     x2 = (-b-math.sqrt(diszkriminans)) / (2*a)
-    print(x1)
-    print(x2)
+    print("2 megoldás: x1:{}, x2:{}".format (x1,x2))
 
 #gyok = math.sqrt(b*b-4*a*c)
 #print(gyok)
 
 print(egyenlet(a,b,c))
+
+print(a)
+print(x1)
+print(x2)
+
+
+
+
+
+
+
