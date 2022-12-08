@@ -20,7 +20,7 @@ print("Nap="+str(n))
 print()
 #for i in range(10):
     #print(str(l[1])+"."+str(h[1])+"."+str(n[1]))
-#Nem tudtam jobb megoldást rá :(
+
 print(str(l[0])+"."+str(h[0])+"."+str(n[0]))
 print(str(l[1])+"."+str(h[1])+"."+str(n[1]))
 print(str(l[2])+"."+str(h[2])+"."+str(n[2]))
