@@ -31,3 +31,27 @@ print(l5)
 
 l5=[e//15 for e in l if e%5==0]
 print(l5)
+
+
+print(random.randrange(167,1667,2)*6)
+
+print((random.randint(83,832)*2+1)*6)
+print()
+print()
+
+
+
+
+
+szavak=["alma","körte","barack","banón","dinnye","szőlő"]
+
+#random.seed(1)
+print(szavak[random.randint(0,len(szavak)-1)])
+
+
+print(random.choice(szavak))
+
+
+
+
+
