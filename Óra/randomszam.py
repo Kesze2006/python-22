@@ -52,6 +52,16 @@ print(szavak[random.randint(0,len(szavak)-1)])
 print(random.choice(szavak))
 
 
+#[["alma",14]["körte",18]]
+nagylista = []
+for e in szavak:
+        kislista=[]
+        kislista.append(e)
+        kislista.append(random.randint(12,312))
+        #print(kislista)
+        nagylista.append(kislista)
+        print(nagylista)
 
-
+for e in nagylista:
+    print(e[0].ljust(10),str(e[1]).rjust(10),"kg")
 
