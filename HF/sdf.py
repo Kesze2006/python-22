@@ -22,6 +22,6 @@ print()
 for e in nagylista:
     print(".",e[0].ljust(5),end=" ")
     print("-"*e[1],e[1])
-print("."*108)
+print("."*120)
 print("kg".center(105))
 #print("dinnye","-"*97,"100")
