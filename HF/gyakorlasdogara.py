@@ -49,8 +49,8 @@ print(len(szoveg))
 
 l=45
 
-while l != 1:
-    l = int(input("Kérek egy számot: "))
+
+l = int(input("Kérek egy számot: "))
 
 fa="""
    *
@@ -68,6 +68,22 @@ fa="""
 
 fa=fa.replace("*",str(l))
 print(fa)
+
+
+
+szoveg = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis ipsum et nisi porta convallis. Sed non bibendum felis. Maecenas porttitor ligula ut hendrerit placerat. Fusce cursus tincidunt lectus. Praesent consequat scelerisque elit, vestibulum placerat justo aliquam ut. Cras lobortis feugiat sagittis. Fusce eleifend interdum lorem ac eleifend. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus luctus velit ac varius gravida. Nulla sit amet vulputate nibh. Cras sed tellus urna. Mauris pulvinar sodales nunc, nec scelerisque risus suscipit quis. Ut ultricies consequat quam, ac condimentum lectus pellentesque quis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin consequat, erat nec gravida ultricies, purus eros pulvinar erat, ut imperdiet enim risus eget purus. Donec magna magna, facilisis non faucibus vel, rhoncus eu elit."
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
