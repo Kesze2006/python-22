@@ -16,10 +16,29 @@ def sokbeker():
         szavak.append(szo)
         szo=szobeker()
     return(szavak)
-print(sokbeker())
+
 
 def filebair(lista):
     f=open("szotar.txt","a")
-
-
+    for e in lista:
+        f.write(" ".join(e))
+        f.write("\n")
+        #print(e)
+        
     f.close()
+
+kerdesek=[]
+def beolvas():
+    f=open("szotar.txt","r")
+    for sor in f:
+        kerdesek.append(sor.replace("\n","").split(" "))
+    
+    f.close()
+def kerdez():
+    print(kerdesek)
+
+
+kerdez()
+beolvas() 
+#szavak=sokbeker()
+#filebair(szavak)
