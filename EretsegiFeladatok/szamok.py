@@ -1,3 +1,4 @@
+import random
 
 f=open("felszam.txt","r")
 
@@ -18,7 +19,7 @@ matek=[]
 for e in kerdesek:
     if e[3] == "matematika":
         matek.append(e[2])
-
+print("3. feladat")
 print("Az adatfajlban " + str(len(matek)) + " matematika feladat van, 1 pontot er " + str(matek.count(1)) + " feladat, 2 pontot er " + str(matek.count(2)) + " feladat, 3 pontot er "+str(matek.count(3))+" feladat.")
 
 
@@ -26,5 +27,25 @@ print("Az adatfajlban " + str(len(matek)) + " matematika feladat van, 1 pontot e
 valaszok=[]
 for e in kerdesek:
     valaszok.append(e[1])
-
+print("4. feladat")
 print("A válaszok számértéke {}-től {}-ig tart.".format(min(valaszok),max(valaszok)))
+
+temakorok=[]
+for e in kerdesek:
+    if e [3] not in temakorok:
+        temakorok.append(e[3])
+print("5. feladat")
+print("A témakörök: "+", ".join(temakorok))
+
+
+print("6. feladat")
+beker=input("Milyen témakörből szeretne kérdést kapni? ")
+ujLista=[e for  e in kerdesek if e[3] == beker]
+
+sorsol=random.choice(ujLista)
+valasz=input(sorsol[0])
+if int(valasz)==sorsol[1]:
+    print(str(sorsol[2])+" pont")
+else:
+    print("0 pont")
+    print("A helyes válasz: "+str(sorsol[1]))
