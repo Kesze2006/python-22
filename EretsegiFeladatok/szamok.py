@@ -49,3 +49,26 @@ if int(valasz)==sorsol[1]:
 else:
     print("0 pont")
     print("A helyes válasz: "+str(sorsol[1]))
+
+print("7. feladat")
+
+lista10=[]
+for e in range(10):
+    r = random.choice(kerdesek)
+    while r in lista10:
+        r = random.choice(kerdesek)
+
+    lista10.append(r)
+
+#print(lista10)
+random.shuffle(kerdesek)
+
+lista10=kerdesek[0:10]
+
+f=open("tesztfel.txt","w")
+ossz=0
+for e in lista10:
+    f.write(str(e[2])+" "+str(e[1])+" "+str(e[0])+"\n")
+    ossz+=e[2]
+f.write("A feladatsorra összesen {0} pont addható.".format(ossz))
+f.close()
