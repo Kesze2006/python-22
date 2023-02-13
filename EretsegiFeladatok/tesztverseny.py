@@ -1,11 +1,16 @@
 def pontSzamit(valasz,helyes):
     pont=0
     for sorszam,betu in enumerate(valasz):
-          if betu==helyes[sorszam]:
-               if sorszam<=5:
-                    pont+=3
-               elif sorszam<10:
-                    pont+=4
+        if betu==helyes[sorszam]:
+            if sorszam<=5:
+                pont+=3
+            elif sorszam<10:
+                pont+=4
+            elif sorszam<14:
+                pont+=5
+            else:
+                pont+=6
+        return pont
             
           
 
@@ -41,7 +46,7 @@ print("2. feladat: A vetélkedőn "+str(len(valaszok))+" versenyző indult.")
 
 
 
-s
+
 versenyzo=input("3. feladat: A versenyző azonosítója = ")
 
 
@@ -70,12 +75,12 @@ for sorszam,betu in enumerate(versenyzoValasza):
            
 print("\t(a versenyzo helyes valaszai)")
 
-feladat = int(input("5. feladat: A feladat sorszáma"))
+feladat = int(input("5. feladat: A feladat sorszáma = "))
 
 
 db=0
 for e in versenyzoValasza:
-     if e[1][feladat]==helyes [feladat]:
+     if e[1][feladat]==helyes[feladat]:
           db+=1
 
 
@@ -84,8 +89,8 @@ print("A feladatra {} fő, a versenyzők {1:.2%}-a adott helyes választ.".forma
 
 f=open("pontok.txt","w")
 for e in valaszok:
-     pont=pontSzamit(e[1],helyes)
-
+    pont=pontSzamit(e[1],helyes)
+    f.write(e[0]+" "+str(pont)+"\n")
 
 f.close()
      
