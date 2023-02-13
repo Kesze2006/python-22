@@ -79,25 +79,31 @@ feladat = int(input("5. feladat: A feladat sorszáma = "))
 
 
 db=0
-for e in versenyzoValasza:
+for e in valaszok:
      if e[1][feladat]==helyes[feladat]:
           db+=1
 
 
-print("A feladatra {} fő, a versenyzők {1:.2%}-a adott helyes választ.".format(db, db/len(valaszok)))
+#print("A feladatra {} fő, a versenyzők {1:.2%}-a adott helyes választ.".format(db, db/len(valaszok)))
 
 
 f=open("pontok.txt","w")
+eredmenyek=[]
 for e in valaszok:
     pont=pontSzamit(e[1],helyes)
     f.write(e[0]+" "+str(pont)+"\n")
-
+    eredmenyek.append([pont,e[0]])
 f.close()
-     
 
+#eredmenyek.sort()
+#eredmenyek.reverse()
+#print(eredmenyek)
 
+csakpontok=set()
+for e in eredmenyek:
+    csakpontok.add(e[0])
 
-
+print(list(csakpontok))
 
 
 
