@@ -80,14 +80,15 @@ feladat = int(input("5. feladat: A feladat sorszáma = "))
 
 db=0
 for e in valaszok:
-     if e[1][feladat]==helyes[feladat]:
-          db+=1
+    if e[1][feladat]==helyes[feladat]:
+        db+=1
 
 
-#print("A feladatra {} fő, a versenyzők {1:.2%}-a adott helyes választ.".format(db, db/len(valaszok)))
+print("A feladatra {0} fő, a versenyzők {1:.2%}-a adott helyes választ.".format(db, db/len(valaszok)))
 
 
 f=open("pontok.txt","w")
+
 eredmenyek=[]
 for e in valaszok:
     pont=pontSzamit(e[1],helyes)
@@ -102,11 +103,20 @@ f.close()
 csakpontok=set()
 for e in eredmenyek:
     csakpontok.add(e[0])
+top3=list(csakpontok)[-3:]
+top3.sort()
+top3.reverse()
 
-print(list(csakpontok))
+for sorszam,i in enumerate(top3):
+    #print(i)
+    for e in eredmenyek:
+        if e[0] == i:
+            print("{} helyezett lett {} {} ".format(sorszam,i,e[1]))
+#print(list(csakpontok)[-3:])
 
 
 
+#Hibás cumó!!
 
 
 
