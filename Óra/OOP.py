@@ -18,7 +18,7 @@ class kutya:
         print("Vau-vau!")
         
     def koszon(self):
-        print("Vau-vau, {} vagyok".format(self.nev))
+        print("Vau-vau, {} vagyok!".format(self.nev))
 
 
     def talalkozas(self,masik):
@@ -34,7 +34,19 @@ class kutya:
             else:
                 print("Szia, báttya!")
 
-        
+
+    def __str__(self):
+        return "{},{},({})".format(self.nev,self.fajta,self.kor)
+
+
+class kotorek(kutya):
+    def koszon(self):
+        print("{} a nevem, kutyaság a mindenem!".format(self.nev))
+
+    def __init__(self,nev,fajta,ag,kor,szin,szemszin):
+        super().__init__(nev,fajta,ag,kor,szin)
+        self.szemszin=szemszin
+
 
 k1=kutya("Bodri","puli",3,9,"fekete")
 k2=kutya("Morzsi","golden retriver",10,3,"világos barna")
@@ -43,6 +55,62 @@ k1.koszon()
 k2.koszon()
 k2.talalkozas(k1)
 k1.talalkozas(k2)
+
+kotor1=kotorek("Füles","tacskó",10,4,"barna","zöld")
+kotor1.koszon()
+k1.talalkozas(kotor1)
+print(kotor1.szemszin)
+print(k1)
+print(kotor1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 """
 print(Myclass.x)
 
