@@ -11,16 +11,9 @@ def eltol(pontok,x,y):
 
 def nagyit(pontok,meret=1):
     vissza=[]
-    for i, pont in pontok:
+    for pont in pontok:
         vissza.append(pont*meret)
     return vissza
-
-
-    
-
-
-
-
 
 
 
@@ -46,7 +39,7 @@ m2=eltol(M,100,-100)
 
 canvas.create_line(m2, fill="purple", width=5)
 
-
+m3=nagyit(M,10)
 
 
 
