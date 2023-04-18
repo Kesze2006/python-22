@@ -15,7 +15,7 @@ class kutya:
         self.kor=kor
         self.szin=szin
     def ugat(self):
-        print("Vau-vau!")
+        print("Vau-vau!sadassd")
         
     def koszon(self):
         print("Vau-vau, {} vagyok!".format(self.nev))
