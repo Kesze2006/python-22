@@ -1,6 +1,33 @@
 import math
-
 from tkinter import *
+
+
+class forgato:
+    canvas=0
+    vonalak=[]
+    def __init__(self,canvas,vonalak):
+        self.canvas=canvas
+        self.vonalak=vonalak
+    def rajzol(self):
+        canvas.delete("all")
+        #szog+=1
+        #print(szog)
+        for betu in self.vonalak:
+            betu=eltol(betu,-kozep[0],-kozep[1])
+            betu=forgat(betu,szog)
+            betu=eltol(betu,kozep[0],kozep[1])
+            
+            self.canvas.create_line(betu,fill="black",width=5)
+
+            
+        
+
+
+
+
+
+
+
 
 def eltol(pontok,x,y):
     vissza=[]
@@ -30,7 +57,7 @@ def forgat(pontok,szog):
             
             vissza.append(x)
             vissza.append(y)
-        return vissza        
+    return vissza        
 
 
 
@@ -52,6 +79,28 @@ AKOS=[[0,375,125,125,250,375,175,375,150,300,100,300,75,375,0,375,],
       [550,175,700,175,700,325,550,325,550,175,],
       [1000,125,750,125,750,249,936,249,936,311,750,311,750,375,1000,375,1000,210,812,210,810,160,1000,160,1000,125,]]
 
+
+
+
+elso=forgato(canvas,AKOS)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 kozep=[0,0]
 db=0
 for betu in AKOS:
@@ -65,18 +114,18 @@ kozep[0]/=db
 kozep[1]/=db
 
 
+szog=0
+while True:
+    elso.rajzol()
+    win.update_idletasks()
+    win.update()
 
-
-for betu in AKOS:
-    betu=eltol(betu,kozep[0],kozep[1])
-    betu=forgat(betu,10)
-    canvas.create_line(betu,fill="black",width=10)
-
-
-
-
-
+        
+    #win.mainloop()
 
 
 
-win.mainloop()
+
+
+
+
