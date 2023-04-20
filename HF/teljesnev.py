@@ -5,59 +5,57 @@ from tkinter import *
 class forgato:
     canvas=0
     vonalak=[]
+    szog=0
+    szogSebesseg=1
+    
     def __init__(self,canvas,vonalak):
         self.canvas=canvas
         self.vonalak=vonalak
     def rajzol(self):
         canvas.delete("all")
-        #szog+=1
-        #print(szog)
+        self.szog+=self.szogSebesseg
+        
         for betu in self.vonalak:
-            betu=eltol(betu,-kozep[0],-kozep[1])
-            betu=forgat(betu,szog)
-            betu=eltol(betu,kozep[0],kozep[1])
+            betu=self.eltol(betu,-kozep[0],-kozep[1])
+            
+            betu=self.forgat(betu,self.szog)
+            
+            betu=self.eltol(betu,400,200)
+            
+            betu=self.eltol(betu,kozep[0],kozep[1])
             
             self.canvas.create_line(betu,fill="black",width=5)
 
-            
-        
+
+    def eltol(self,pontok,x,y):
+        vissza=[]
+        for i, pont in enumerate(pontok):
+            if i%2==1:
+                vissza.append(pont+y)
+            else:
+                vissza.append(pont+x)
+        return vissza
+
+    def nagyit(self,pontok,meret=1):
+        vissza=[]
+        for pont in pontok:
+            vissza.append(pont*meret)
+        return vissza
 
 
-
-
-
-
-
-
-def eltol(pontok,x,y):
-    vissza=[]
-    for i, pont in enumerate(pontok):
-        if i%2==1:
-            vissza.append(pont+y)
-        else:
-            vissza.append(pont+x)
-    return vissza
-
-def nagyit(pontok,meret=1):
-    vissza=[]
-    for pont in pontok:
-        vissza.append(pont*meret)
-    return vissza
-
-
-def forgat(pontok,szog):
-    vissza=[]
-    for i, pont in enumerate(pontok):
-        if i%2 == 0:
-            
-            
-            x=pontok[i]*math.cos(math.radians(szog))-pontok[i+1]*math.sin(math.radians(szog))
-            
-            y=pontok[i]*math.sin(math.radians(szog))+pontok[i+1]*math.cos(math.radians(szog))
-            
-            vissza.append(x)
-            vissza.append(y)
-    return vissza        
+    def forgat(self,pontok,szog):
+        vissza=[]
+        for i, pont in enumerate(pontok):
+            if i%2 == 0:
+                
+                
+                x=pontok[i]*math.cos(math.radians(szog))-pontok[i+1]*math.sin(math.radians(szog))
+                
+                y=pontok[i]*math.sin(math.radians(szog))+pontok[i+1]*math.cos(math.radians(szog))
+                
+                vissza.append(x)
+                vissza.append(y)
+        return vissza        
 
 
 
@@ -85,22 +83,6 @@ AKOS=[[0,375,125,125,250,375,175,375,150,300,100,300,75,375,0,375,],
 elso=forgato(canvas,AKOS)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 kozep=[0,0]
 db=0
 for betu in AKOS:
@@ -115,6 +97,8 @@ kozep[1]/=db
 
 
 szog=0
+
+
 while True:
     elso.rajzol()
     win.update_idletasks()
