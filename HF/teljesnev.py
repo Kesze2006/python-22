@@ -6,25 +6,27 @@ class forgato:
     canvas=0
     vonalak=[]
     szog=0
-    szogSebesseg=1
+    szogSebesseg=0.5
+    szinek=[]
     
     def __init__(self,canvas,vonalak):
         self.canvas=canvas
         self.vonalak=vonalak
+        self.kozepSzamol()
     def rajzol(self):
         canvas.delete("all")
         self.szog+=self.szogSebesseg
         
-        for betu in self.vonalak:
-            betu=self.eltol(betu,-kozep[0],-kozep[1])
+        for i,betu in enumerate(self.vonalak):
+            betu=self.eltol(betu,-self.kozep[0],-self.kozep[1])
             
             betu=self.forgat(betu,self.szog)
             
-            betu=self.eltol(betu,400,200)
+            betu=self.eltol(betu,200,200)
             
-            betu=self.eltol(betu,kozep[0],kozep[1])
+            betu=self.eltol(betu,self.kozep[0],self.kozep[1])
             
-            self.canvas.create_line(betu,fill="black",width=5)
+            self.canvas.create_line(betu,fill=self.szinek[i],width=5)
 
 
     def eltol(self,pontok,x,y):
@@ -55,7 +57,21 @@ class forgato:
                 
                 vissza.append(x)
                 vissza.append(y)
-        return vissza        
+        return vissza
+
+    
+    def kozepSzamol(self):
+        self.kozep=[0,0]
+        db=0
+        for betu in AKOS:
+            xK=betu[::2]
+            yK=betu[1::2]
+            self.kozep[0]+=sum(xK)
+            self.kozep[1]+=sum(yK)
+            db+=len(xK)
+            
+        self.kozep[0]/=db
+        self.kozep[1]/=db
 
 
 
@@ -81,19 +97,7 @@ AKOS=[[0,375,125,125,250,375,175,375,150,300,100,300,75,375,0,375,],
 
 
 elso=forgato(canvas,AKOS)
-
-
-kozep=[0,0]
-db=0
-for betu in AKOS:
-    xK=betu[::2]
-    yK=betu[1::2]
-    kozep[0]+=sum(xK)
-    kozep[1]+=sum(yK)
-    db+=len(xK)
-    
-kozep[0]/=db
-kozep[1]/=db
+elso.szinek=["blue","blue","blue","green","yellow","yellow","red"]
 
 
 szog=0
