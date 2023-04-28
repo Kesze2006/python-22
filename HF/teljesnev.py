@@ -20,7 +20,7 @@ class forgato:
         for i,betu in enumerate(self.vonalak):
             betu=self.eltol(betu,-self.kozep[0],-self.kozep[1])
             
-            betu=self.forgat(betu,self.szog)
+            #betu=self.forgat(betu,self.szog)
             
             betu=self.eltol(betu,200,200)
             
