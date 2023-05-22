@@ -25,11 +25,10 @@ temp=[]
 for e in f:
     sorok.append(e.strip())
     #2. megoldás
-    if len(temp) < 3:
-        temp.append(e.strip())
+    if len(temp)<3:
+        temp.append(e)
     else:
         tancok2.append(tanc(temp[0],temp[1],temp[2]))
-        temp=[]
 f.close()
 
 
@@ -52,15 +51,68 @@ db=0
 for egyTanc in tancok:
     if egyTanc.tanc == "samba":
         db+=1
-    else:
-        pass
-print("Ennyi szamba volt: {}".format(db))
+print("Ennyi samba volt: {}".format(db))
 
 print("Vilam ezekben szerepelt:")
 
 for egyTanc in tancok:
     if egyTanc.isVilma():
         print(egyTanc.tanc)
+
+
+tancNev=input("Kérek egy táncnevet: ")
+for elem in tancok:
+    if elem.lany=="Vilma" and elem.tanc==tancNev:
+        print("A {} bemutatóján Vilma párja {} volt.".format(tancNev,elem.fiu))
+        break
+else:
+    print("Vilma nem táncolt {}-t.".format(tancNev))
+
+fiu=[]
+lany=[]
+for egyTanc in tancok:
+    if egyTanc.fiu not in fiu:
+        fiu.append(egyTanc.fiu)
+
+for egyTanc in tancok:
+    if egyTanc.lany not in fiu:
+        lany.append(egyTanc.lany)
+
+print(", ".join(fiu))
+#print(", ".join(lany))
+
+f=open("szereplok.txt","w")
+
+#f.write("Lányok: "+", ".join(lany)+"\n")
+f.write("Fiuk: "+", ".join(fiu)+"\n")
+
+f.close()
+
+statFiu={}
+
+for egy in fiu:
+    statFiu[egy]=0
+
+for egyTanc in tancok:
+    statFiu[egyTanc.fiu]+=1
+
+
+
+#statLany={}
+
+#for egy in lany:
+    #statLany[egy]=0
+
+#for egyTanc in tancok:
+    #statLany[egyTanc.lany]+=1
+
+
+
+
+
+#print(statLany)
+print(statFiu)
+
 
 
 
