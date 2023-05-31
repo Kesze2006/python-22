@@ -15,13 +15,14 @@ body{
 }
 
 .lablec a {
-    color: black;
+    color: red;
     font-weight: bold;
     text-decoration: none;
 }
 
 .lablec a:hover {
     text-decoration: none;
+    color: darkred;
 }
 
 .container{
@@ -29,5 +30,11 @@ body{
 }
 .fejlec
 {
-}
 
+}
+p{
+    text-align: justify;
+}
+#zaszlok img{
+    border: 1px solid black;
+}
