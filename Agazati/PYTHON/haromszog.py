@@ -1,13 +1,13 @@
 def haromszog():
-    vissza=[]
+    szamok=[]
     for e in range(3):
         szam=""
         while szam == "":
             try:
-                szam = int(input("Kérek egy egész számot:"))
+                szam=int(input("Kérek egy számot: "))
+                szamok.append(szam)
             except:
-                print("Ez nem egész szám!")
-        vissza.append(szam)
+                print("Ez nem szám!")
+haromszog()
 
-    return vissza    
-    
+

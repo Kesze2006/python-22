@@ -6,8 +6,7 @@ while szam == "":
         szam = int(input("Kérek egy egész számot:"))
     except:
         print("Ez nem egész szám!")
-#print(szam)
 if len(szoveg) > szam:
-    print(szoveg[szam-1]*szam)
+    print(szoveg[szam]*szam)
 else:
-    print("Sajnos nincs ilyen betű.")
+    print("Sajnos nincs ilyen betű!")

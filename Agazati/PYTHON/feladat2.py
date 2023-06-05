@@ -1,3 +1,4 @@
 import haromszog
 
-print(haromszog.haromszog())
+alma=haromszog.haromszog()
+print(alma)
